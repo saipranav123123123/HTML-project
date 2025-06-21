@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5page1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background.jpg');">
+  <div>
+   <h1 class="h1">What's your goal?</h1>
+   <div> 
+    <img src="gettonedg.jpg" class="gainimage">
+    <button class="goal" id="gettoned">Get toned</button>
+   </div>
+   <div>
+    <img src="loseweight1.jpg" class="gainimage">
+    <button class="goal" id="loseWeight">Lose weight</button>
+    </div>
+  </div>
+   <script>
+     document.getElementById("gettoned").addEventListener("click", function() {
+      localStorage.setItem("goal","getToned");
+      window.location.href = "6page1.html";
+    }); 
+    document.getElementById("loseWeight").addEventListener("click", function() {
+      localStorage.setItem("goal","loseWeight");
+      window.location.href = "6page1.html";
+    });
+   </script> 
+</body>
+</html>

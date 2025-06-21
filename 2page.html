@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2nd page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body  style="background-image:url('agem.jpg');"> 
+   <div>
+    <h1 class="h1" style="text-align:center; margin-top:150px;color:white;">How old are you?</h1>
+    <input type="number" id="age">
+    <label for="age" class="labelage">years</label> 
+   </div>
+   <script>
+    const ageInput = document.getElementById("age");
+    ageInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        const age = parseInt(ageInput.value);
+        if (age >= 9 && age <= 70) {
+          localStorage.setItem("age", age);
+          window.location.href = "3page.html";
+        } else {
+          alert("Age must be between 9 and 70.");
+        }
+      }
+    });
+   </script>
+</body>
+</html>

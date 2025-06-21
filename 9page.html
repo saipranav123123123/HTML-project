@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9page</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('background2.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .gainimage {
+      max-width: 90%;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .plan {
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 10px auto;
+      padding: 12px;
+      font-size: 1em;
+      border-radius: 8px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .plan:hover {
+      background-color: #0056b3;
+    }
+
+    h1.h1, h2 {
+      color: white;
+      margin: 10px;
+      font-size: 1.5em;
+    }
+
+    @media (min-width: 600px) {
+      h1.h1 {
+        font-size: 2.2em;
+      }
+
+      h2 {
+        font-size: 1.3em;
+      }
+
+      .plan {
+        font-size: 1.1em;
+        width: 40%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1 class="h1">How many push-ups can you do?</h1>
+    <h2>How many can you do without a break?</h2>
+    <div> 
+      <img src="pushupsm.jpg" class="gainimage">
+    </div>
+    <button class="plan" id="Less than 10">Less than 10</button>
+    <button class="plan" id="10-20">10-20</button>
+    <div>
+      <button class="plan" id="More than 20">More than 20</button>
+      <button class="plan" id="I don't know">I don't know</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("Less than 10").addEventListener("click", function() {
+      localStorage.setItem("pushups","Less than 10");
+      window.location.href = "10page.html";
+    }); 
+    document.getElementById("10-20").addEventListener("click", function() {
+      localStorage.setItem("pushups","10-20");
+      window.location.href = "10page.html";
+    });
+    document.getElementById("More than 20").addEventListener("click", function() {
+      localStorage.setItem("pushups","More than 20");
+      window.location.href = "10page.html";
+    });
+    document.getElementById("I don't know").addEventListener("click", function() {
+      localStorage.setItem("pushups","I don't know");
+      window.location.href = "10page.html";
+    });
+  </script> 
+</body>
+</html>

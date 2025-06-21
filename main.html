@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=1024">
+  <title>1st Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('genderbackg.jpg');">
+  <div>
+    <h1 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: bold;">Welcome to Challenge.</h1>
+    <h1 class="h1">What's your gender?</h1>
+  </div>
+  <div>
+    <img src="femaleg.png" class="female1"> 
+    <img src="malem.png" class="male1">
+    </div>
+    <button class="female" onclick="age1()">Female</button>
+    <button class="male" onclick="age()">Male</button>
+  <script>
+    function age() {
+      localStorage.setItem("gender","Male");
+      window.location.href="2page.html";
+    }
+    function age1() {
+      localStorage.setItem("gender","Female");
+      window.location.href="2page1.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background1.jpg');">
+  <div>
+   <h1 class="h1">What's your body type?</h1>
+   <div> 
+    <img src="Ectomorph.jpg" class="gainimage">
+    <button class="goal" id="Ectomorph">Ectomorph</button>
+   </div>
+   <div>
+    <img src="Mesomorph.jpg" class="gainimage">
+    <button class="goal" id="Mesomorph">Mesomorph</button>
+    </div>
+    <div>
+    <img src="Endomorph.jpg" class="gainimage">
+    <button class="goal" id="Endomorph">Endomorph</button>
+    </div>
+  </div>
+   <script>
+     document.getElementById("Ectomorph").addEventListener("click", function() {
+      localStorage.setItem("bodyType","Ectomorph");
+      window.location.href = "7page.html";
+    }); 
+    document.getElementById("Mesomorph").addEventListener("click", function() {
+      localStorage.setItem("bodyType","Mesomorph");
+      window.location.href = "7page.html";
+    });
+    document.getElementById("Endomorph").addEventListener("click", function() {
+      localStorage.setItem("bodyType","Endomorph");
+      window.location.href = "7page.html";
+    });
+   </script> 
+</body>
+</html>

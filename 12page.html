@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background.jpg');">
+  <div>
+   <h1 class="h1" style="color:white;">What length of workouts do you prefer?</h1>
+    <button class="time" id="Short, 10-15min">Short, 10-15min</button>
+    <button class="time" id="Medium, 15-25min">Medium, 15-25min</button>
+    <button class="time" id="Long, 25-40min">Long, 25-40min</button>
+  </div>
+   <script>
+     document.getElementById("Short, 10-15min").addEventListener("click", function() {
+       localStorage.setItem("workoutLength","Short");
+      window.location.href = "13page.html";
+    }); 
+    document.getElementById("Medium, 15-25min").addEventListener("click", function() {
+      localStorage.setItem("workoutLength","Medium");
+      window.location.href = "13page.html";
+    });
+    document.getElementById("Long, 25-40min").addEventListener("click", function() {
+       localStorage.setItem("workoutLength","Long");
+      window.location.href = "13page.html";
+    });
+   </script> 
+</body>
+</html>

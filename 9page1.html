@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9page1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background2.jpg');">
+  <div>
+   <h1 class="h1" style="color:white;">How many pushups can you do?</h1>
+     <h2 style="color:white;">How many can you do without a break?</h2>
+   <div> 
+    <img src="pushupsf.JPG" class="gainimage">
+   </div>
+    <button class="plan" id="Less than 5">Less than 5</button>
+    <button class="plan" id="5-20">10-20</button>
+    <div>
+    <button class="plan" id="More than 20">More than 20</button>
+    <button class="plan" id="I don't know">I don't know</button>
+    </div>
+  </div>
+   <script>
+     document.getElementById("Less than 5").addEventListener("click", function() {
+      localStorage.setItem("pushups","Less than 5");
+      window.location.href = "10page1.html";
+    }); 
+    document.getElementById("5-20").addEventListener("click", function() {
+      localStorage.setItem("pushups","5-20");
+      window.location.href = "10page1.html";
+    });
+    document.getElementById("More than 20").addEventListener("click", function() {
+      localStorage.setItem("pushups","More than 20");
+      window.location.href = "10page1.html";
+    });
+    document.getElementById("I don't know").addEventListener("click", function() {
+     localStorage.setItem("pushups","I don't know");
+      window.location.href = "10page1.html";
+    });
+   </script> 
+</body>
+</html>

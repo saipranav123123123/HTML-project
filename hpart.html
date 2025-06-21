@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Male Fitness Challenge</title>
+    <link rel="stylesheet" href="cpart.css">
+</head>
+<body>
+    <div class="container" id="login-container">
+        <h1>Fitness Challenge</h1>
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p class="register-link">Don't have an account? <a href="#" id="register-btn">Register</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="register-container" style="display: none;">
+        <h1>Register</h1>
+        <div class="login-form">
+            <h2>Create Account</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="new-username">Username</label>
+                    <input type="text" id="new-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Password</label>
+                    <input type="password" id="new-password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p class="register-link">Already have an account? <a href="#" id="login-back-btn">Login</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="main-container" style="display: none;">
+        <header>
+            <h1>Fitness Challenge</h1>
+            <button id="logout-btn" class="btn logout">Logout</button>
+        </header>
+        
+        <div class="profile-section">
+            <h2>Your Profile</h2>
+            <div class="profile-info">
+                <p><strong>Age:</strong> <span id="profile-age">18</span> years</p>
+                <p><strong>Height:</strong> <span id="profile-height">5 ft 8 in</span></p>
+                <p><strong>Weight:</strong> <span id="profile-weight">62</span> kg</p>
+                <p><strong>BMI:</strong> <span id="profile-bmi">20.7</span> (Healthy)</p>
+                <p><strong>Goal:</strong> <span id="profile-goal">Get toned</span></p>
+                <p><strong>Focus Areas:</strong> <span id="profile-focus">Arms, Belly, Butt, Thighs</span></p>
+            </div>
+        </div>
+        
+        <div class="challenge-section">
+            <h2>Your 30-Day Challenge</h2>
+            <div class="challenge-card">
+                <h3>Week 1: Foundation</h3>
+                <ul>
+                    <li>Day 1-3: 20 push-ups, 30 squats</li>
+                    <li>Day 4-5: 25 push-ups, 35 squats</li>
+                    <li>Day 6-7: Rest or light walking</li>
+                </ul>
+            </div>
+            <div class="challenge-card">
+                <h3>Week 2: Intensity</h3>
+                <ul>
+                    <li>Day 8-10: 30 push-ups, 40 squats, 1 min plank</li>
+                    <li>Day 11-12: 35 push-ups, 45 squats, 1.5 min plank</li>
+                    <li>Day 13-14: Rest or light jogging</li>
+                </ul>
+            </div>
+            <div class="progress-tracker">
+                <h3>Your Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 10%;">10%</div>
+                </div>
+                <button class="btn" id="update-progress">Update Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="jpart.js"></script>
+</body>
+</html>

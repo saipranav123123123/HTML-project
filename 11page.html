@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background.jpg');">
+  <div>
+   <h1 class="h1" style="color:white;">For how long are you ready to commit?</h1>
+    <button class="time" id="Atleast a 1 year">Atleast a 1 year</button>
+    <button class="time" id="Atleast a 3 months">Atleast a 3 months</button>
+    <button class="time" id="Atleast 1 month">Atleast 1 month</button>
+  </div>
+   <script>
+     document.getElementById("Atleast a 1 year").addEventListener("click", function() {
+      localStorage.setItem("commitment","Atleasta1year");
+      window.location.href = "12page.html";
+    }); 
+    document.getElementById("Atleast a 3 months").addEventListener("click", function() {
+      localStorage.setItem("commitment","Atleasta3months");
+      window.location.href = "12page.html";
+    });
+    document.getElementById("Atleast 1 month").addEventListener("click", function() {
+      localStorage.setItem("commitment","Atleast1month");
+      window.location.href = "12page.html";
+    });
+   </script> 
+</body>
+</html>

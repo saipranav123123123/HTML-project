@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6page1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background.jpg');">
+  <div>
+   <h1 class="h1">What's your body type?</h1>
+   <div class="a2">
+   <div> 
+    <img src="Hourglass.jpg" class="gainimage">
+    <button class="goal" id="Hourglass">Hourglass</button>
+   </div>
+   <div>
+    <img src="Rectangle.jpg" class="gainimage" >
+    <button class="goal" id="Rectangle">Rectangle</button>
+    </div>
+    </div>
+    <div class="a1">
+    <div>
+    <img src="Round.jpg" class="gainimage">
+    <button class="goal" id="Round">Round</button>
+    </div>
+    <div>
+    <img src="Pear.jpg" class="gainimage">
+    <button class="goal" id="Pear">Pear</button>
+    </div>
+    </div>
+  </div>
+   <script>
+     document.getElementById("Hourglass").addEventListener("click", function() {
+      localStorage.setItem("bodyType","Hourglass");
+      window.location.href = "7page1.html";
+    }); 
+    document.getElementById("Rectangle").addEventListener("click", function() {
+        localStorage.setItem("bodyType","Rectangle");
+      window.location.href = "7page1.html";
+    });
+    document.getElementById("Round").addEventListener("click", function() {
+        localStorage.setItem("bodyType","Round");
+      window.location.href = "7page1.html";
+    });
+      document.getElementById("Pear").addEventListener("click", function() {
+       localStorage.setItem("bodyType","Pear");
+      window.location.href = "7page1.html";
+    });
+   </script> 
+</body>
+</html>

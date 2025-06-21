@@ -1,0 +1,289 @@
+body {
+  background-image: url('theme.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 800px;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background: rgb(194, 88, 88);
+  width: 90%;
+  max-width: 500px;
+  margin: 100px auto 0 auto;
+  padding: 20px;
+  border: 4px solid rgb(0, 0, 0);
+  background-image: url('loginbox.JPG');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.username, #username1 {
+  color: blue;
+}
+
+input {
+  width: 200px;
+  max-width: 200px;
+  height: 25px;
+  margin: 5px 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.button1 {
+  width: 80px;
+  height: 30px;
+  margin: 5px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.signup-btn {
+  background: orange;
+  color: white;
+  border-radius: 6px;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+.female, .male {
+  padding: 30px 80px;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffffcc;
+  margin-top: 20px;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 100px;
+  display: inline-block;
+}
+
+.male {
+  margin-left: 680px;
+}
+
+.age {
+  font-size: 20px;
+  margin-top: 100px;
+}
+
+.female1, .male1 {
+  border-radius: 1000px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.female1 {
+  margin-left: 50px;
+}
+
+.male1 {
+  margin-left: 500px;
+  margin-right: 0px;
+}
+
+.h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 0px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#age, #age1 {
+  margin-top: 150px;
+  margin-left: 600px;
+  width: 500px;
+  height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.labelage {
+  display: block;
+  margin-left: 750px;
+  margin-top: 70px;
+  font-size: 50px;
+}
+
+.goal {
+  padding: 30px 110px;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffffcc;
+  margin: 100px 0px 100px 330px;
+  display: block;
+}
+
+.gainimage {
+  margin-left: 300px;
+  border-radius: 50px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+}
+
+.a2, .a1 {
+  display: block;
+  width: 100%;
+}
+
+.plan {
+  padding: 30px 90px 30px 90px;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffffcc;
+  margin: 70px 0px 100px 190px;
+  display: inline-block;
+}
+
+.time {
+  padding: 30px 200px 30px 200px;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffffcc;
+  margin: 100px 0px 100px 190px;
+  display: block;
+}
+
+.name {
+  padding: 30px 200px 30px 200px;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffffcc;
+  margin: 200px 0px 100px 300px;
+  width: 90%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.next {
+  padding: 30px 100px 30px 100px;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #131212cc;
+  margin: 100px 0px 100px 500px;
+  color: azure;
+  display: block;
+}
+@media (max-width: 800px) {
+  .box {
+    width: 98%;
+    max-width: 98%;
+    margin: 40px auto 0 auto;
+    padding: 10px;
+  }
+
+  .h1 {
+    font-size: 32px;
+    margin-top: 20px;
+  }
+
+  #age, #age1 {
+    width: 320px;
+    max-width: 95%;
+    height: 60px;
+    font-size: 24px;
+    margin: 40px auto 0 auto;
+    display: block;
+  }
+
+  .labelage {
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .female, .male, .goal, .plan, .time, .name, .next {
+    padding: 15px 10px;
+    font-size: 18px;
+    margin: 20px auto;
+    width: 95%;
+    max-width: 95%;
+    display: block;
+  }
+
+  .male {
+    margin-left: 0;
+  }
+
+  .female {
+    margin-left: 0;
+  }
+
+  .female1, .male1 {
+    margin-left: 0;
+    margin-top: 10px;
+    display: block;
+  }
+
+  .gainimage {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 95%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .a2, .a1 {
+    display: block;
+    width: 100%;
+  }
+
+  input, textarea {
+    width: 95%;
+    max-width: 95%;
+    font-size: 18px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  .h1, .labelage {
+    font-size: 18px;
+  }
+  .goal, .plan, .time, .name, .next {
+    font-size: 14px;
+    padding: 10px 5px;
+  }
+  #age, #age1 {
+    font-size: 14px;
+    height: 40px;
+    width: 95%;
+  }
+  .gainimage {
+    border-radius: 20px;
+  }
+}

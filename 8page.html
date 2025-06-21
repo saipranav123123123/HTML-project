@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background2.jpg');">
+  <div>
+   <h1 class="h1" style="color:white;">How many squats can you do?</h1>
+     <h2 style="color:white;">How many can you do without a break?</h2>
+   <div> 
+    <img src="squatsm.jpg" class="gainimage">
+   </div>
+    <button class="plan" id="Less than 15">Less than 15</button>
+    <button class="plan" id="15-30">15-30</button>
+    <div>
+    <button class="plan" id="More than 30">More than 30</button>
+    <button class="plan" id="I don't know">I don't know</button>
+    </div>
+  </div>
+   <script>
+     document.getElementById("Less than 15").addEventListener("click", function() {
+      localStorage.setItem("squads","Less than 15");
+      window.location.href = "9page.html";
+    }); 
+    document.getElementById("15-30").addEventListener("click", function() {
+      localStorage.setItem("squads","15-30");
+      window.location.href = "9page.html";
+    });
+    document.getElementById("More than 30").addEventListener("click", function() {
+      localStorage.setItem("squads","More than 30");
+      window.location.href = "9page.html";
+    });
+    document.getElementById("I don't know").addEventListener("click", function() {
+      localStorage.setItem("squads","I don't know");
+      window.location.href = "9page.html";
+    });
+   </script> 
+</body>
+</html>

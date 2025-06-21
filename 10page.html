@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background2.jpg');">
+  <div>
+   <h1 class="h1" style="color:white;">How long can you hold a plank?</h1>
+     <h2 style="color:white;">choose your maximum time without resting?</h2>
+   <div> 
+    <img src="plankm.jpg" class="gainimage">
+   </div>
+    <button class="plan" id="Less than 30s">Less than 30s</button>
+    <button class="plan" id="30-60s">30-60s</button>
+    <div>
+    <button class="plan" id="More than 1min">More than 1min</button>
+    <button class="plan" id="I don't know">I don't know</button>
+    </div>
+  </div>
+   <script>
+     document.getElementById("Less than 30s").addEventListener("click", function() {
+      localStorage.setItem("plank","Less than 30s");
+      window.location.href = "11page.html";
+    }); 
+    document.getElementById("30-60s").addEventListener("click", function() {
+      localStorage.setItem("plank","30-60");
+      window.location.href = "11page.html";
+    });
+    document.getElementById("More than 1min").addEventListener("click", function() {
+      localStorage.setItem("plank","More than 1min");
+      window.location.href = "11page.html";
+    });
+    document.getElementById("I don't know").addEventListener("click", function() {
+      localStorage.setItem("plank","I don't know");
+      window.location.href = "11page.html";
+    });
+   </script> 
+</body>
+</html>

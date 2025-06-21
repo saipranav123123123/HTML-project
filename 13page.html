@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background.jpg');">
+  <div>
+   <h1 class="h1">What should we call you?</h1>
+    <textarea class="name" id="name" placeholder="First name"></textarea>
+    <button onclick="storeName()" class="next">Next</button>
+  </div>
+   <script>
+    function storeName() {
+     let n=document.getElementById("name")
+      localStorage.setItem("name",n.value);
+      window.location.href = "14page.html";
+    }
+   </script> 
+</body>
+</html>

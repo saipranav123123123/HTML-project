@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('weightm.jpg');">
+  <div>
+    <h1 class="h1">What's your weight?</h1>
+    <input type="number" id="age1">
+    <label for="age1" class="labelage" onclick="">weight(in kgs)</label> 
+  </div>
+  <script>
+    const weightinput = document.getElementById("age1");
+    weightinput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        const weight = parseInt(weightinput.value);
+        if (weight >= 20 && weight <= 500) {
+          localStorage.setItem("weight", weight);
+          window.location.href = "5page.html";
+        } else {
+          alert("Weight must be between 20 and 500 kg.");
+        }
+      }
+    });
+  </script> 
+</body>
+</html>

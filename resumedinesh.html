@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: aqua;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .section h2 {
+            background: #666;
+            color: white;
+            padding: 5px;
+            font-size: 18px;
+        }
+        .section p, .section i {
+            padding: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background: #666;
+            color: white;
+        }
+
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                
+            }
+            
+
+            .header img {
+                margin-top: 10px;
+                align-self: center;
+            }
+            p{
+                color: blueviolet;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 300;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MY RESUME</h1>
+    <div class="header">
+        <div>
+            <h2>Your Name - DINESH VENUM</h2>
+            <p>Address Line 1 - Modern 3rd Street RCPM<br>
+            Address Line 2 - Opposite to Church DWLSM<br>
+            City - RCPM, State - Andhra, ZIP - 533255</p>
+            <p>Email: <a href="mailto:dineshvenum5@gmail.com">dineshvenum5@gmail.com</a></p>
+            <p>Contact No: 7981-243-888</p>
+        </div>
+        <div>
+            <img style="width: 130px; border-radius: 5px;" src="Dinesh.jpg" alt="Profile Picture">
+        </div>
+    </div>
+
+    <div class="section" style="background-color: bisque;">
+        <h2>CAREER OBJECTIVE</h2>
+        <i>To succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self-development.</i>
+    </div>
+
+    <div class="section" style="background-color: pink;">
+        <h2>ACADEMIC QUALIFICATION</h2>
+        <table>
+            <tr>
+                <th>Qualification</th>
+                <th>University</th>
+                <th>Course Section</th>
+                <th>Year of Passing</th>
+            </tr>
+            <tr>
+                <td>AP Board</td>
+                <td>Narayana</td>
+                <td>State Board</td>
+                <td>2012</td>
+            </tr>
+            <tr>
+                <td>Inter Board</td>
+                <td>Narayana</td>
+                <td>State Board</td>
+                <td>2014</td>
+            </tr>
+            <tr>
+                <td>B.Tech CSE AI</td>
+                <td>Amrita</td>
+                <td>CSE-AI</td>
+                <td>2018</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section" style="background-color: bisque;">
+        <h2>SKILLS</h2>
+        <ul>
+            <li>Coding in C</li>
+            <li>DSA</li>
+            <li>Java Programming</li>
+            <li>VN Video Editor (Shorts)</li>
+            <li>Coding in Python</li>
+        </ul>
+    </div>
+
+    <div class="section" style="background-color: yellow;">
+        <h2>ACHIEVEMENTS</h2>
+        <ul>
+            <li>97.6 Percentile in JEE Mains</li>
+            <li>98% in State Board School</li>
+            <li>98.1% in State Board 12th</li>
+            <li>8.3 Overall CGPA in B.Tech</li>
+        </ul>
+    </div>
+
+    <div class="section" style="background-color: bisque;">
+        <h2>WORK EXPERIENCE</h2>
+        <h3>Software Engineer - Infosys</h3>
+        <p><i>January 2020 - Present</i></p>
+        <ul>
+            <li>Developed web applications using HTML, CSS, and JavaScript.</li>
+            <li>Worked with backend technologies like Node.js and MySQL.</li>
+            <li>Led a team of junior developers to complete projects efficiently.</li>
+        </ul>
+
+        <h3>Intern - Elon Musk Corporation</h3>
+        <p><i>June 2019 - December 2019</i></p>
+        <ul>
+            <li>Assisted in developing front-end interfaces for company software.</li>
+            <li>Collaborated with senior developers on debugging and troubleshooting.</li>
+        </ul>
+    </div>
+
+    <div class="section" style="background-color: orange;">
+        <h2>PROJECTS</h2>
+        <ul>
+            <li><strong>Project 1:</strong> Developed a task management system to streamline workflow efficiency.</li>
+            <li><strong>Project 2:</strong> Implemented an AI-powered chatbot to enhance customer service operations.</li>
+        </ul>
+    </div>
+
+    <div class="section" style="background-color: rebeccapurple; color: white;">
+        <h2>SALARY DETAILS</h2>
+        <p><strong>Software Engineer - ABC Tech</strong> (2019 - 2022)</p>
+        <p>Salary: $80,000 per year</p>
+        <p><strong>Senior Developer - XYZ Solutions</strong> (2022 - Present

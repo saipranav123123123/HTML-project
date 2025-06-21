@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('background1.jpg');">
+  <div>
+   <h1 class="h1">What's your dream body shape?</h1>
+   <div> 
+    <img src="Athletic.jpg" class="gainimage">
+    <button class="goal" id="Athletic">Athletic</button>
+   </div>
+   <div>
+    <img src="Balanced.jpg" class="gainimage">
+    <button class="goal" id="Balanced">Balanced</button>
+    </div>
+    <div>
+    <img src="Strong.jpg" class="gainimage">
+    <button class="goal" id="Strong">Strong</button>
+    </div>
+  </div>
+   <script>
+     document.getElementById("Athletic").addEventListener("click", function() {
+       localStorage.setItem("dreamShape","Athletic");
+      window.location.href = "8page.html";
+    }); 
+    document.getElementById("Balanced").addEventListener("click", function() {
+       localStorage.setItem("dreamShape","Balanced");
+      window.location.href = "8page.html";
+    });
+    document.getElementById("Strong").addEventListener("click", function() {
+       localStorage.setItem("dreamShape","Strong");
+      window.location.href = "8page.html";
+    });
+   </script> 
+</body>
+</html>

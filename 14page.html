@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Personalized Workout Plan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f7f9fc;
+      color: #2D3436;
+      line-height: 1.6;
+    }
+    .profile-header {
+      background: #1a365f;
+      color: white;
+      padding: 32px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 32px;
+    }
+    .metric-card {
+      background: #1a365f;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .metric-card1 {
+      background: rgb(243, 238, 238);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .exercise-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .exercise-card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      border: 3px solid #2A5C84;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      flex: 1 1 250px;
+      min-width: 250px;
+    }
+    .exercise-card h3 {
+      margin: 0 0 16px 0;
+      color: #2A5C84;
+    }
+    .exercise-card ul {
+      padding-left: 19.2px;
+    }
+    .exercise-card li {
+      margin: 12.8px 0;
+      position: relative;
+    }
+    .highlight {
+      background: #fff8e6;
+      border-radius: 4px;
+      padding: 3.2px 8px;
+      display: inline-block;
+    }
+    span.highlight {
+      background: #1a365f;
+      color: white;
+      border-radius: 4px;
+      padding: 3.2px 8px;
+      display: inline-block;
+    }
+    .age-specific {
+      background: #fff8e6;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .loading {
+      text-align: center;
+      padding: 32px;
+      font-size: 19.2px;
+      color: #2A5C84;
+    }
+    .button {
+      margin-left:300px;
+      padding:20px 30px 20px 30px;
+      border-radius:10px;
+    }
+  </style>
+</head>
+<body style="background-image:url('gymback.jpg');">
+  <div id="workoutPlan" class="loading">
+    <p>Loading your personalized workout plan...</p>
+  </div>
+  <div><button class="button" onclick="about()">About</button></div>
+  <script>
+       const data = {
+        name: localStorage.getItem("name") || "Fitness Enthusiast",
+        age: parseInt(localStorage.getItem("age")) || 25,
+        height: parseInt(localStorage.getItem("height")) || 170,
+        weight: parseInt(localStorage.getItem("weight")) || 70,
+        gender: localStorage.getItem("gender") || "Male",
+        goal: localStorage.getItem("goal") || "loseWeight",
+        bodyType: localStorage.getItem("bodyType") || "Mesomorph",
+        dreamShape: localStorage.getItem("dreamShape") || "Athletic",
+        squads: localStorage.getItem("squads") || "15-30",
+        pushups: localStorage.getItem("pushups") || "10-20",
+        plank: localStorage.getItem("plank") || "30-60s",
+        commitment: localStorage.getItem("commitment") || "Atleasta1year",
+        workoutLength: localStorage.getItem("workoutLength") || "Medium",
+      };
+
+      const heightM = data.height / 100;
+      const bmi = (data.weight / (heightM * heightM)).toFixed(1);
+      
+      function getAgeCategory(age) {
+        if (age < 18) return "Teen";
+        if (age < 25) return "Young Adult";
+        if (age < 35) return "Adult";
+        if (age < 50) return "Middle Age";
+        return "Senior";
+      }
+      
+      function getFitnessLevel(squads, pushups, plank) {
+        let score = 0;
+        if (squads === "15-30") {score++;}
+        else if (squads === "More than 30") {score += 2;}
+        if (pushups === "10-20") {score++;}
+        else if (pushups === "More than 20"){score += 2;}
+        if (plank === "30-60s") {score++;}
+        else if (plank === "More than 1min") {score += 2;}
+        if (score >= 4) {return "Advanced";}
+        else if (score >= 2) {return "Intermediate";}
+        else {return "Beginner";}
+      }
+
+      function getFrequency(commitment) {
+        const frequencies = {
+          "Atleast1month": "3x/week",
+          "Atleasta3months": "4x/week",
+          "Atleasta1year": "5x/week"
+        };
+        return frequencies[commitment] || "3x/week";
+      }
+
+      function getAgeSpecificModifications(age) {
+        if (age < 18) {
+          return {
+            warmup: "15min dynamic warmup (growing joints need extra care)",
+            recovery: "48-72 hours between sessions",
+            intensity: "Moderate intensity, focus on form",
+            special: "Avoid heavy weights, emphasize bodyweight exercises"
+          };
+        } else if (age < 25) {
+          return {
+            warmup: "10min dynamic warmup",
+            recovery: "24-48 hours between sessions",
+            intensity: "High intensity allowed",
+            special: "Peak recovery age - can handle frequent training"
+          };
+        } else if (age < 35) {
+          return {
+            warmup: "12min dynamic warmup + mobility",
+            recovery: "48 hours between intense sessions",
+            intensity: "Moderate to high intensity",
+            special: "Include stress management and sleep optimization"
+          };
+        } else if (age < 50) {
+          return {
+            warmup: "15min warmup + joint mobility",
+            recovery: "48-72 hours between sessions",
+            intensity: "Moderate intensity, focus on consistency",
+            special: "Prioritize injury prevention and flexibility"
+          };
+        } else {
+          return {
+            warmup: "20min gentle warmup + stretching",
+            recovery: "72 hours between intense sessions",
+            intensity: "Low to moderate intensity",
+            special: "Focus on balance, stability, and bone health"
+          };
+        }
+      }
+
+      function generateWorkoutPlan(data) {
+        const ageCategory = getAgeCategory(data.age);
+        const fitnessLevel = getFitnessLevel(data.squads, data.pushups, data.plank);
+        const ageModifications = getAgeSpecificModifications(data.age);
+        const workoutFrequency = getFrequency(data.commitment);
+        
+        let strengthExercises = [];
+        let cardioExercises = [];
+        let specialTips = [];
+        let flexibilityExercises = [
+          "Dynamic stretching pre-workout",
+          "Yoga flows 2x/week",
+          "Static stretching post-workout"
+        ];
+        
+        if (data.goal === "gainMuscle") {
+          if (data.age < 18) {
+            strengthExercises = [
+              "Bodyweight Squats: 4 sets of 12-15 reps",
+              "Push-ups: 3 sets of 8-12 reps",
+              "Pull-ups (assisted): 3 sets of 5-8 reps",
+              "Lunges: 3 sets of 10 per leg",
+              "Planks: 3 sets of 30-45s"
+            ];
+            cardioExercises = ["Light jogging 20min, 2x/week"];
+            specialTips.push("Teen Muscle Building: Focus on bodyweight exercises and proper nutrition for growth");
+          } else if (data.age < 25) {
+            strengthExercises = [
+              "Barbell Squats: 4 sets of 8-10 reps (heavy)",
+              "Deadlifts: 4 sets of 6-8 reps",
+              "Bench Press: 4 sets of 8-10 reps",
+              "Pull-ups: 4 sets to failure",
+              "Overhead Press: 3 sets of 8-10 reps"
+            ];
+            cardioExercises = ["HIIT 2x/week, 20min sessions"];
+            specialTips.push("Young Adult Muscle Building: Peak recovery allows aggressive progressive overload");
+          } else if (data.age < 35) {
+            strengthExercises = [
+              "Squats: 4 sets of 8-12 reps",
+              "Deadlifts: 3 sets of 8-10 reps",
+              "Incline Press: 3 sets of 10-12 reps",
+              "Rows: 3 sets of 10-12 reps",
+              "Dips: 3 sets of 10-15 reps"
+            ];
+            cardioExercises = ["Moderate cardio 3x/week, 25min"];
+            specialTips.push("Adult Muscle Building: Balance intensity with recovery and stress management");
+          } else if (data.age < 50) {
+            strengthExercises = [
+              "Goblet Squats: 3 sets of 12-15 reps",
+              "Romanian Deadlifts: 3 sets of 10-12 reps",
+              "Push-ups: 3 sets of 10-15 reps",
+              "Resistance Band Rows: 3 sets of 15 reps",
+              "Wall Sits: 3 sets of 30-45s"
+            ];
+            cardioExercises = ["Walking/Swimming 4x/week, 30min"];
+            specialTips.push("Middle Age Muscle Building: Focus on joint-friendly exercises and injury prevention");
+          } else {
+            strengthExercises = [
+              "Chair Squats: 3 sets of 10-12 reps",
+              "Light Dumbbell Press: 3 sets of 12 reps",
+              "Resistance Band Exercises: 3 sets of 15 reps",
+              "Balance Exercises: Daily",
+              "Gentle Yoga: 3x/week"
+            ];
+            cardioExercises = ["Daily walks 30min, Water aerobics 2x/week"];
+            specialTips.push("Senior Muscle Building: Maintain muscle mass with safe, low-impact exercises");
+          }
+        }
+        else if (data.goal === "loseWeight") {
+          if (data.age < 18) {
+            strengthExercises = [
+              "Bodyweight Circuits: 3 rounds of 45s each",
+              "Jump Squats: 3 sets of 15 reps",
+              "Mountain Climbers: 3 sets of 30s",
+              "Burpees: 3 sets of 8-10 reps"
+            ];
+            cardioExercises = ["Fun activities: Dancing, sports, cycling 45min daily"];
+            specialTips.push("Teen Weight Loss: Focus on fun activities and healthy eating habits");
+          } else if (data.age < 25) {
+            strengthExercises = [
+              "HIIT Circuit Training: 4 rounds of 1min each",
+              "Kettlebell Swings: 4 sets of 25 reps",
+              "Burpees: 4 sets of 12-15 reps",
+              "Sprint Intervals: 8x30s with 90s rest"
+            ];
+            cardioExercises = ["High-intensity cardio 5x/week, 30-40min"];
+            specialTips.push("Young Adult Weight Loss: High-intensity training with quick recovery");
+          } else if (data.age < 35) {
+            strengthExercises = [
+              "Circuit Training: 3 rounds of 45s work/15s rest",
+              "Kettlebell Swings: 3 sets of 20 reps",
+              "Push-ups: 3 sets of 12-15 reps",
+              "Plank Variations: 3 sets of 45s"
+            ];
+            cardioExercises = ["Mixed cardio 4x/week: Running, cycling, rowing 35min"];
+            specialTips.push("Adult Weight Loss: Combine strength and cardio with stress management");
+          } else if (data.age < 50) {
+            strengthExercises = [
+              "Low-impact Strength Circuit: 3 rounds",
+              "Resistance Band Exercises: 3 sets of 15 reps",
+              "Modified Push-ups: 3 sets of 10 reps",
+              "Core Stability: 3 sets of 30s"
+            ];
+            cardioExercises = ["Low-impact cardio 5x/week: Walking, swimming, elliptical 40min"];
+            specialTips.push("Middle Age Weight Loss: Joint-friendly exercises with consistent cardio");
+          } else {
+            strengthExercises = [
+              "Gentle Resistance Training: 3 sets of 12 reps",
+              "Chair Exercises: Daily",
+              "Balance and Stability: 3x/week",
+              "Stretching: Daily 15min"
+            ];
+            cardioExercises = ["Daily gentle walks 45min, Water exercises 3x/week"];
+            specialTips.push("Senior Weight Loss: Safe, sustainable activities with medical supervision");
+          }
+        }
+        else if (data.goal === "getToned") {
+          if (data.age < 25) {
+            strengthExercises = [
+              "High-rep Bodyweight: 4 sets of 15-20 reps",
+              "Pilates-style Movements: 3 sets of 20 reps",
+              "Resistance Band Training: 3 sets of 15 reps",
+              "Core Focused: 4 sets of 30s each"
+            ];
+            cardioExercises = ["Dance cardio, Pilates 4x/week"];
+            specialTips.push("Young Adult Toning: High-rep training for lean muscle definition");
+          } else if (data.age < 35) {
+            strengthExercises = [
+              "Bodyweight Circuits: 3 sets of 15 reps",
+              "Light Weight High-rep: 3 sets of 15-20 reps",
+              "Yoga-strength Fusion: 3x/week",
+              "Core Stability: Daily"
+            ];
+            cardioExercises = ["Barre, Pilates, Yoga 4x/week"];
+            specialTips.push("Adult Toning: Combine strength with flexibility for lean physique");
+          } else {
+            strengthExercises = [
+              "Gentle Toning Exercises: 3 sets of 12-15 reps",
+              "Resistance Band Toning: 3 sets of 15 reps",
+              "Chair-based Strength: 3x/week",
+              "Gentle Yoga: Daily"
+            ];
+            cardioExercises = ["Low-impact toning classes 3x/week"];
+            specialTips.push("Mature Toning: Safe, effective exercises for muscle definition");
+          }
+        }
+
+        if (data.gender === "Male" && data.age < 35) {
+          specialTips.push("Male Training: Enhanced upper body focus with compound movements");
+        } else if (data.gender === "Female") {
+          specialTips.push("Female Training: Emphasis on lower body, core, and functional movements");
+        }
+        
+        if (data.bodyType === "Ectomorph" || data.bodyType === "Rectangle") {
+          specialTips.push("Body Type Focus: Compound movements for overall development");
+        } else if (data.bodyType === "Endomorph" || data.bodyType === "Round") {
+          specialTips.push("Body Type Focus: More cardio and core work for balanced results");
+        } else if (data.bodyType === "Mesomorph" || data.bodyType === "Hourglass") {
+          specialTips.push("Body Type Focus: Balanced strength and cardio approach");
+        }
+
+        if (data.dreamShape === "Athletic" || data.dreamShape === "Strong") {
+          specialTips.push("Dream Shape Goal: Progressive overload and full-body workouts");
+        } else if (data.dreamShape === "Thin" || data.dreamShape === "Toned") {
+          specialTips.push("Dream Shape Goal: Lean muscle and high-rep training");
+        } else if (data.dreamShape === "Curvy") {
+          specialTips.push("Dream Shape Goal: Target glutes and core with resistance training");
+        }
+
+        return {
+          strengthExercises,
+          cardioExercises,
+          specialTips,
+          flexibilityExercises,
+          ageModifications,
+          ageCategory,
+          fitnessLevel,
+          workoutFrequency
+        };
+      }
+      const plan = generateWorkoutPlan(data);
+
+        let strengthList = '';
+        for (let i = 0; i < plan.strengthExercises.length; i++) {
+          strengthList += '<li>' + plan.strengthExercises[i] + '</li>';
+        }
+
+        let cardioList = '';
+        for (let i = 0; i < plan.cardioExercises.length; i++) {
+          cardioList += '<li>' + plan.cardioExercises[i] + '</li>';
+        }
+
+        let flexibilityList = '';
+        for (let i = 0; i < plan.flexibilityExercises.length; i++) {
+          flexibilityList += '<li>' + plan.flexibilityExercises[i] + '</li>';
+        }
+        flexibilityList += '<li>Recovery time: ' + plan.ageModifications.recovery + '</li>';
+
+        let tipsList = '';
+        for (let i = 0; i < plan.specialTips.length; i++) {
+          tipsList += '<li>' + plan.specialTips[i] + '</li>';
+        }
+
+        const htmlPlan = `
+          <div class="profile-header">
+            <h1>Hello, ${data.name}!</h1>
+            <h3>Profile Summary</h3>
+            <p>${data.age} yrs (${plan.ageCategory}) • ${data.height} cm • ${data.weight} kg • ${data.gender}</p>
+            <p>BMI: ${bmi} • Body Type: ${data.bodyType} • Dream Shape: ${data.dreamShape}</p>                      
+            <small>Fitness Level: <span class="highlight">${plan.fitnessLevel}</span></small>
+          </div>
+
+          <div class="age-specific">
+            <h3>Age-Specific Guidelines (${plan.ageCategory} - ${data.age} years)</h3>
+            <ul>
+              <li><strong>Warmup:</strong> ${plan.ageModifications.warmup}</li>
+              <li><strong>Recovery:</strong> ${plan.ageModifications.recovery}</li>
+              <li><strong>Intensity:</strong> ${plan.ageModifications.intensity}</li>
+              <li><strong>Special Note:</strong> ${plan.ageModifications.special}</li>
+            </ul>
+          </div>
+
+          <div class="exercise-group">
+            <div class="exercise-card">
+              <h3>Strength Training (${plan.workoutFrequency})</h3>
+              <ul>
+                ${strengthList}
+              </ul>
+            </div>
+            <div class="exercise-card">
+              <h3> Cardio Protocol</h3>
+              <ul>
+                ${cardioList}
+              </ul>
+            </div>
+          </div>
+
+          <div class="exercise-group">
+            <div class="exercise-card">
+              <h3> Flexibility & Recovery</h3>
+              <ul>
+                ${flexibilityList}
+              </ul>
+            </div>
+            <div class="exercise-card">
+              <h3> Personalized Tips</h3>
+              <ul>
+                ${tipsList}
+              </ul>
+            </div>
+          </div>
+
+          <div class="metric-card1">
+            <h3>Complete Program Details</h3>
+            <p>Commitment: ${data.commitment}</p>
+            <p>Session Length: ${data.workoutLength}</p>
+            <p>Primary Goal: ${data.goal}</p>
+            <p>Gender: ${data.gender}</p>
+            <p>Age Category: ${plan.ageCategory}</p>
+            <p>Current Fitness: Squats(${data.squads}), Push-ups(${data.pushups}), Plank(${data.plank})</p>
+            <p>Fitness Level: ${plan.fitnessLevel}</p>
+            <p>BMI: ${bmi}</p>
+          </div>
+        `;
+
+        document.getElementById("workoutPlan").innerHTML = htmlPlan;
+         function about() {
+          window.location.href="15page.html"
+         }
+  </script>
+</body>
+]

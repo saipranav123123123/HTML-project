@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3page1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('heightf.jpg');">
+   <div>
+    <h1 class="h1">How tall are you?</h1>
+    <input type="number" id="age1">
+    <label for="age1" class="labelage" onclick="">height(in cm)</label> 
+   </div>
+   <script>
+    const heightinput = document.getElementById("age1");
+    heightinput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        const height = parseInt(heightinput.value);
+        if (height >= 100 && height <= 200) {
+          localStorage.setItem("height", height);
+          window.location.href = "4page1.html";
+        } else {
+          alert("Height must be between 100 and 200 cm.");
+        }
+      }
+    });
+   </script> 
+</body>
+</html>
